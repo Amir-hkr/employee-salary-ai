@@ -78,3 +78,12 @@ print("\n========== Model Evaluation ==========")
 print(f"R2 Score : {r2:.4f}")
 print(f"MAE      : {mae:.2f}")
 print(f"RMSE     : {rmse:.2f}")
+
+
+
+import joblib
+
+# Save trained model
+joblib.dump(model, "models/salary_model.pkl")
+
+print("\nModel saved successfully!")
