@@ -87,3 +87,10 @@ import joblib
 joblib.dump(model, "models/salary_model.pkl")
 
 print("\nModel saved successfully!")
+
+
+# Save encoders
+joblib.dump(gender_encoder, "models/gender_encoder.pkl")
+joblib.dump(education_encoder, "models/education_encoder.pkl")
+
+print("Encoders saved successfully!")
