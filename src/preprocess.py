@@ -91,3 +91,11 @@ print(df["Salary"].min())
 df.to_csv("data/cleaned_salary_data.csv", index=False)
 
 print("\nDataset updated successfully!")
+
+
+
+print("\n========== Unique Values ==========")
+
+print("Gender:", df["Gender"].nunique())
+print("Education Level:", df["Education Level"].nunique())
+print("Job Title:", df["Job Title"].nunique())
