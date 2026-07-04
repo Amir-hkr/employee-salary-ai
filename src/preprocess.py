@@ -69,3 +69,10 @@ print("\n========== Salary ==========")
 print("Minimum Salary :", df["Salary"].min())
 print("Maximum Salary :", df["Salary"].max())
 print("Average Salary :", round(df["Salary"].mean(), 2))
+
+
+print("\n========== Possible Outliers ==========")
+
+outliers = df[df["Salary"] < 10000]
+
+print(outliers)
