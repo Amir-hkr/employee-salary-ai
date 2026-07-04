@@ -43,3 +43,17 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 print("\nTraining Data Shape:", X_train.shape)
 print("Testing Data Shape:", X_test.shape)
+
+
+from sklearn.ensemble import RandomForestRegressor
+
+# Create model
+model = RandomForestRegressor(
+    n_estimators=100,
+    random_state=42
+)
+
+# Train model
+model.fit(X_train, y_train)
+
+print("\nModel trained successfully!")
