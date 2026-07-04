@@ -76,3 +76,18 @@ print("\n========== Possible Outliers ==========")
 outliers = df[df["Salary"] < 10000]
 
 print(outliers)
+
+
+# Remove salary outliers
+df = df[df["Salary"] >= 10000]
+
+print("\nShape After Removing Outliers:")
+print(df.shape)
+
+print("\nNew Minimum Salary:")
+print(df["Salary"].min())
+
+# Save cleaned dataset again
+df.to_csv("data/cleaned_salary_data.csv", index=False)
+
+print("\nDataset updated successfully!")
