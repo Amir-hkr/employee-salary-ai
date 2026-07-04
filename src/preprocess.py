@@ -44,3 +44,28 @@ print(df.duplicated().sum())
 df.to_csv("data/cleaned_salary_data.csv", index=False)
 
 print("\nCleaned dataset saved successfully!")
+
+
+# ==========================
+# Basic Data Analysis (EDA)
+# ==========================
+
+print("\n========== Statistics ==========")
+print(df.describe())
+
+print("\n========== Data Types ==========")
+print(df.dtypes)
+
+print("\n========== Gender ==========")
+print(df["Gender"].value_counts())
+
+print("\n========== Education Level ==========")
+print(df["Education Level"].value_counts())
+
+print("\n========== Top 10 Job Titles ==========")
+print(df["Job Title"].value_counts().head(10))
+
+print("\n========== Salary ==========")
+print("Minimum Salary :", df["Salary"].min())
+print("Maximum Salary :", df["Salary"].max())
+print("Average Salary :", round(df["Salary"].mean(), 2))
