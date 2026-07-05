@@ -49,8 +49,12 @@ from sklearn.ensemble import RandomForestRegressor
 
 # Create model
 model = RandomForestRegressor(
-    n_estimators=100,
-    random_state=42
+    n_estimators=600,
+    max_depth=15,
+    min_samples_split=4,
+    min_samples_leaf=2,
+    random_state=42,
+    n_jobs=-1
 )
 
 # Train model
@@ -94,3 +98,35 @@ joblib.dump(gender_encoder, "models/gender_encoder.pkl")
 joblib.dump(education_encoder, "models/education_encoder.pkl")
 
 print("Encoders saved successfully!")
+
+
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(6,6))
+plt.scatter(y_test, y_pred, alpha=0.6)
+
+plt.xlabel("Actual Salary")
+plt.ylabel("Predicted Salary")
+plt.title("Actual vs Predicted Salary")
+
+# خط ایده‌آل
+plt.plot([y_test.min(), y_test.max()],
+         [y_test.min(), y_test.max()],
+         color="red")
+
+plt.savefig("assets/actual_vs_predicted.png")
+plt.show()
+
+
+import numpy as np
+
+importances = model.feature_importances_
+features = X.columns
+
+plt.figure(figsize=(8,5))
+plt.barh(features, importances)
+plt.xlabel("Importance")
+plt.title("Feature Importance")
+
+plt.savefig("assets/feature_importance.png")
+plt.show()

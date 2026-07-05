@@ -1,6 +1,8 @@
 import streamlit as st
 import joblib
 import pandas as pd
+import matplotlib.pyplot as plt
+from PIL import Image
 
 # Load model and encoders
 model = joblib.load("models/salary_model.pkl")
@@ -55,3 +57,22 @@ if st.button("Predict Salary"):
     prediction = model.predict(input_df)
 
     st.success(f"💰 Predicted Salary: ${prediction[0]:,.2f}")
+
+
+
+st.markdown("## 📊 Model Evaluation Charts")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.image("assets/actual_vs_predicted.png",
+             caption="Actual vs Predicted Salary",
+             use_container_width=True)
+
+with col2:
+    st.image("assets/feature_importance.png",
+             caption="Feature Importance",
+             use_container_width=True)
+
+import os
+st.write("Files in assets:", os.listdir("assets"))
