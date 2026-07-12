@@ -3,8 +3,8 @@
 This project predicts employee salary based on demographic and professional features using Machine Learning.
 ---
 <img src="test model.gif" width="900">
----
 
+---
 ## 🚀 Project Goal
 Build a regression model to estimate employee salary using features like age, experience, education, and gender.
 
