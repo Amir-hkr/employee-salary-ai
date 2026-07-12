@@ -1,6 +1,7 @@
 # 💼 Employee Salary Prediction ML Project
 
 This project predicts employee salary based on demographic and professional features using Machine Learning.
+---
 <img src="test model.gif" width="900">
 ---
 
